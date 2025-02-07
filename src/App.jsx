@@ -1,12 +1,12 @@
-import User from "./components/User";
+import Person from "./components/Person";
+import Product from "./components/Product";
 
 function App() {
   return (
-    <User
-      preferences={["coding", "swimming", "reading"]}
-      name="Kira"
-      age="28"
-    />
+    <div>
+      <Person name={"Johny"} age={21} />
+      <Product name={"Laptop"} price={2200} />
+    </div>
   );
 }
 
