@@ -1,32 +1,12 @@
-function App() {
-  const usersInfo = [
-    {
-      name: "Alice Johnson",
-      email: "alice@example.com",
-      location: "New York, USA",
-    },
-    {
-      name: "Carlos Martinez",
-      email: "carlos@example.com",
-      location: "Madrid, Spain",
-    },
-    {
-      name: "Hiroshi Tanaka",
-      email: "hiroshi@example.com",
-      location: "Tokyo, Japan",
-    },
-  ];
+import ProductList from "./components/ProductList";
+import UserList from "./components/UserList";
 
+function App() {
   return (
-    <main>
-      {usersInfo.map(({ name, email, location }, index) => (
-        <ul key={index}>
-          <li>{name}</li>
-          <li>{email}</li>
-          <li>{location}</li>
-        </ul>
-      ))}
-    </main>
+    <div>
+      <UserList />
+      <ProductList />
+    </div>
   );
 }
 
