@@ -1,9 +1,9 @@
-import Weather from "./components/Weather";
+import UserStatus from "./components/UserStatus";
 
 function App() {
   return (
     <div>
-      <Weather temp={50} />
+      <UserStatus loggedIn={true} isAdmin={false} />
     </div>
   );
 }
