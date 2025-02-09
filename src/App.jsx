@@ -1,22 +1,14 @@
-import Card from "./components/Card";
+const ValidPassword = () => <h1>Valid Password</h1>;
+
+const InvalidPassword = () => <h1>inValid Password</h1>;
+
+const Password = ({ isValid }) =>
+  isValid ? <ValidPassword /> : <InvalidPassword />;
 
 function App() {
   return (
     <div>
-      <Card>
-        <h1>My Card Component</h1>
-        <p>This is some content card 1 </p>
-      </Card>
-
-      <Card>
-        <h1>My Card Component2</h1>
-        <p>This is some content card 1 </p>
-      </Card>
-
-      <Card>
-        <h1>My Card Component3</h1>
-        <p>This is some content card 1 </p>
-      </Card>
+      <Password isValid={false} />
     </div>
   );
 }
