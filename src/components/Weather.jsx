@@ -1,15 +1,14 @@
-const Weather = ({ temp }) => {
+const Weather = ({ temperature }) => {
   let message;
-
-  if (temp < 15) {
+  if (temperature < 15) {
     message = "It's cold outside";
-  } else if (temp >= 15 && temp <= 25) {
+  } else if (temperature >= 15 && temperature <= 24) {
     message = "It's fine outside";
   } else {
     message = "It's hot outside";
   }
 
-  return <div>The weather is {message}</div>;
+  return <div>{message}</div>;
 };
 
 export default Weather;

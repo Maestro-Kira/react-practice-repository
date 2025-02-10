@@ -1,9 +1,13 @@
-import UserStatus from "./components/UserStatus";
+import Greetings from "./components/Greetings";
+import UserInfo from "./components/UserInfo";
+import Weather from "./components/Weather";
 
 function App() {
   return (
     <div>
-      <UserStatus loggedIn={true} isAdmin={false} />
+      <Greetings time="Morning" />
+      <UserInfo loggedIn={true} isAdmin={true} />
+      <Weather temperature={-1} />
     </div>
   );
 }
