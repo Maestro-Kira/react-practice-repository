@@ -1,14 +1,14 @@
-import Greetings from "./components/Greetings";
-import UserInfo from "./components/UserInfo";
-import Weather from "./components/Weather";
+import { FaComputer } from "react-icons/fa6";
+import { IoMdCart } from "react-icons/io";
+import "./index.css";
 
 function App() {
   return (
-    <div>
-      <Greetings time="Morning" />
-      <UserInfo loggedIn={true} isAdmin={true} />
-      <Weather temperature={-1} />
-    </div>
+    <section>
+      <h1>Separate file for stiling</h1>
+      <IoMdCart />
+      <FaComputer />
+    </section>
   );
 }
 
