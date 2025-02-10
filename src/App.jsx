@@ -1,13 +1,14 @@
-import { FaComputer } from "react-icons/fa6";
-import { IoMdCart } from "react-icons/io";
-import "./index.css";
+import StyledCard from "./components/StyledCard";
+
+import ProfileCard from "./components/ProfileCard";
+import IconComponent from "./components/IconComponent";
 
 function App() {
   return (
     <section>
-      <h1>Separate file for stiling</h1>
-      <IoMdCart />
-      <FaComputer />
+      <StyledCard />
+      <ProfileCard />
+      <IconComponent />
     </section>
   );
 }
