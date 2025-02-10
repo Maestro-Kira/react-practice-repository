@@ -1,14 +1,20 @@
-import StyledCard from "./components/StyledCard";
+const Copy = () => {
+  const copyHandler = () => {
+    alert("DON'T COPY!!");
+  };
 
-import ProfileCard from "./components/ProfileCard";
-import IconComponent from "./components/IconComponent";
+  return (
+    <p onCopy={copyHandler}>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti maxime
+      corrupti eos odio, eius non ea nobis itaque facere sequi?
+    </p>
+  );
+};
 
 function App() {
   return (
     <section>
-      <StyledCard />
-      <ProfileCard />
-      <IconComponent />
+      <Copy />
     </section>
   );
 }
