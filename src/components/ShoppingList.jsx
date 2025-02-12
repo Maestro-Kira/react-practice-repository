@@ -1,49 +1,55 @@
 import { useState } from "react";
 
 const ShoppingList = () => {
-  const [items, setItems] = useState([]);
-  const [name, setName] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const handleSubmit = (e) => {
+  const [cartItems, setCartItems] = useState([]);
+  const [itemName, setName] = useState("");
+  const [itemQuantity, setQuantity] = useState("");
+  const handleForm = (e) => {
     e.preventDefault();
-    if (!name || !quantity) {
-      return;
-    }
-
+    if (!itemName || !itemQuantity) return;
     const newItem = {
-      name,
-      quantity: parseInt(quantity),
+      itemName,
+      itemQuantity: Number(itemQuantity),
     };
 
-    setItems((prevItems) => [...prevItems, newItem]);
+    setCartItems((previousItems) => {
+      return [...previousItems, newItem];
+    });
     setName("");
     setQuantity("");
   };
 
   return (
     <div>
-      <h1>Shopping List</h1>
-      <form onSubmit={handleSubmit}>
+      <h1>SHOPPING LIST</h1>
+      <form onSubmit={handleForm}>
+        <label htmlFor="itemName">Item Name</label>
+        <br />
         <input
           type="text"
-          placeholder="Type name"
-          value={name}
+          name="itemName"
+          id="itemName"
+          value={itemName}
           onChange={(e) => setName(e.target.value)}
         />
 
+        <br />
+        <label htmlFor="itemQuantity">Item Quantity</label>
+        <br />
         <input
-          type="number"
-          placeholder="Type quantity"
-          value={quantity}
+          type="text"
+          name="itemQuantity"
+          id="itemQuantity"
+          value={itemQuantity}
           onChange={(e) => setQuantity(e.target.value)}
         />
-        <button type="submit">Add item</button>
+        <button type="submit">Go</button>
       </form>
 
       <ul>
-        {items.map((item, index) => (
+        {cartItems.map((item, index) => (
           <li key={index}>
-            {item.name} - Quantity: {item.quantity}
+            Item name {item.itemName}. Quantity: {item.itemQuantity}
           </li>
         ))}
       </ul>

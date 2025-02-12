@@ -1,30 +1,21 @@
 import { useState } from "react";
-import { useEffect } from "react";
 
 const Counter = () => {
-  const [count, setCount] = useState(() => {
-    let savedNumber = localStorage.getItem("number");
-    return savedNumber ? JSON.parse(savedNumber) : 0;
-  });
-
-  useEffect(() => {
-    localStorage.setItem("number", JSON.stringify(count));
-  }, [count]);
-
+  const [count, setCounter] = useState(0);
   const increment = () => {
-    setCount((prevCount) => prevCount + 1);
+    setCounter((prevNum) => prevNum + 1);
   };
 
   const decrement = () => {
-    setCount((prevCount) => prevCount - 1);
+    setCounter((prevNum) => prevNum - 1);
   };
 
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={increment}>Increment</button>
-
-      <button onClick={decrement}>Decrement</button>
+      <h1>Counter</h1>
+      <p>You clicked {count} times ヾ(≧▽≦*)o </p>
+      <button onClick={increment}>Click Click!</button>
+      <button onClick={decrement}>UnClick?! ಥ_ಥ</button>
     </div>
   );
 };

@@ -1,40 +1,38 @@
 import { useState } from "react";
 
 const ToDoList = () => {
-  const [todos, setToDos] = useState([]);
-
-  const [inputValue, setInputValue] = useState("");
-
-  const handleSubmit = (e) => {
+  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState("");
+  const handleForm = (e) => {
     e.preventDefault();
-
-    if (inputValue.trim()) {
-      setToDos([...todos, inputValue]);
-      setInputValue("");
+    if (task === "") {
+      return;
     }
+    setTasks((previousTasks) => {
+      return [...previousTasks, task];
+    });
+    setTask("");
   };
-
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-  };
-
   return (
     <div>
-      <h1>To Do List</h1>
-      <form onSubmit={handleSubmit}>
+      <h1>TO DO LIST</h1>
+      <form onSubmit={handleForm}>
+        <label htmlFor="name">Task Name</label>
+        <br />
         <input
           type="text"
-          value={inputValue}
-          placeholder="Add a new todo.."
-          onChange={handleChange}
+          id="name"
+          name="name"
+          value={task}
+          onChange={(e) => setTask(e.target.value)}
         />
-
-        <button type="submit">Add to do</button>
+        <br />
+        <button type="submit">Let&#39;s go!</button>
       </form>
 
       <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
+        {tasks.map((task, index) => (
+          <li key={index}>{task}</li>
         ))}
       </ul>
     </div>

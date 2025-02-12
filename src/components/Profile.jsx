@@ -1,51 +1,45 @@
 import { useState } from "react";
-
 const Profile = () => {
-  const [profile, setProfile] = useState({
+  const [userInfo, setUserInfo] = useState({
     name: "",
     age: "",
   });
 
-  const handleChange = (e) => {
-    console.log(e.target);
-
+  const changeData = (e) => {
+    e.preventDefault();
     const { name, value } = e.target;
-
-    setProfile((prevProfile) => ({
-      ...prevProfile,
-      [name]: value,
-    }));
+    setUserInfo((previousData) => {
+      return {
+        ...previousData,
+        [name]: value,
+      };
+    });
+    console.log(userInfo);
   };
+
   return (
     <div>
-      <h2>User Profile</h2>
-      <div>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={profile.name}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
+      <h1>Update User Info</h1>
+      <label>Name</label>
+      <input
+        type="text"
+        name="name"
+        value={userInfo.name}
+        onChange={changeData}
+      />
 
-      <div>
-        <label>
-          Age:
-          <input
-            type="number"
-            name="age"
-            value={profile.age}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-
-      <h3>Profile Info</h3>
-      <p>Name {profile.name}</p>
-      <p>Age {profile.age}</p>
+      <label>Age</label>
+      <input
+        type="number"
+        name="age"
+        value={userInfo.age}
+        onChange={changeData}
+      />
+      <br />
+      <ul>
+        <p>{userInfo.name}</p>
+        <p>{userInfo.age}</p>
+      </ul>
     </div>
   );
 };
