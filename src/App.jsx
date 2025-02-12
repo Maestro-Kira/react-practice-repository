@@ -1,13 +1,9 @@
-import ExampleOne from "./components/ExampleOne";
-import ExampleThree from "./components/ExampleThree";
-import ExampleTwo from "./components/ExampleTwo";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <section>
-      <ExampleOne />
-      <ExampleTwo />
-      <ExampleThree />
+      <Counter />
     </section>
   );
 }
