@@ -1,7 +1,22 @@
-const ComponentC = ({ name }) => {
+import { Data, Data1 } from "../App";
+const ComponentC = () => {
   return (
     <div>
-      <h1>{name}</h1>
+      <Data.Consumer>
+        {(name) => {
+          return (
+            <Data1.Consumer>
+              {(age) => {
+                return (
+                  <h1>
+                    My name is: {name} and Im {age} years old
+                  </h1>
+                );
+              }}
+            </Data1.Consumer>
+          );
+        }}
+      </Data.Consumer>
     </div>
   );
 };
