@@ -1,9 +1,9 @@
-import CopyInput from "./components/CopyInput";
+import Switcher from "./components/Switcher";
 
 function App() {
   return (
     <section>
-      <CopyInput />
+      <Switcher />
     </section>
   );
 }
