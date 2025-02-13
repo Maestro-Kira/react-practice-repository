@@ -1,15 +1,10 @@
-// import BasicEffect from "./components/BasicEffect";
-
-import FetchDataEffect from "./components/FetchDataEffect";
-
-// import CounterEffect from "./components/CounterEffect";
+import ComponentA from "./components/ComponentA";
 
 function App() {
+  const name = "Kira";
   return (
     <section>
-      {/* <BasicEffect /> */}
-      {/* <CounterEffect /> */}
-      <FetchDataEffect />
+      <ComponentA name={name} />
     </section>
   );
 }
