@@ -1,14 +1,14 @@
-import ComponentA from "./components/ComponentA";
-import ComponentB from "./components/ComponentB";
-import { ParentComponent } from "./components/Context";
+import UpdateUser from "./components/UpdateUser";
+import { UserProvider } from "./components/UserContext";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
     <div>
-      <ParentComponent>
-        <ComponentA />
-        <ComponentB />
-      </ParentComponent>
+      <UserProvider>
+        <UserProfile />
+        <UpdateUser />
+      </UserProvider>
     </div>
   );
 }
