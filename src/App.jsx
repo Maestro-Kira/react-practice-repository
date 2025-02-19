@@ -1,14 +1,9 @@
-import UpdateUser from "./components/UpdateUser";
-import { UserProvider } from "./components/UserContext";
-import UserProfile from "./components/UserProfile";
+import { Counter } from "./components/Counter";
 
 function App() {
   return (
     <div>
-      <UserProvider>
-        <UserProfile />
-        <UpdateUser />
-      </UserProvider>
+      <Counter />
     </div>
   );
 }
