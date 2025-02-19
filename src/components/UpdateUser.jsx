@@ -1,22 +1,27 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "./UserContext";
 
 const UpdateUser = () => {
-  const { setUserName } = useContext(UserContext);
+  const { updateUser } = useContext(UserContext);
+  const [newName, setNewName] = useState("");
 
-  const updateInfo = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setUserName(e.target.username.value);
-    e.target.username.value = "";
+    if (newName.trim()) {
+      updateUser(newName);
+      setNewName("");
+    }
   };
   return (
     <div>
-      <form onSubmit={updateInfo}>
-        <label htmlFor="username">Update Username</label>
-        <br />
-        <input type="text" name="username" id="username" />
-        <br />
-        <button type="submit">Update</button>
+      <h2>Update User Name</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={newName}
+          onChange={(e) => setNewName(e.target.value)}
+        />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
