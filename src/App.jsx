@@ -1,11 +1,15 @@
-import FocusInput from "./components/FocusInput";
-import Timer from "./components/Timer";
+import UniqueId from "./components/UniqueId";
 
 function App() {
   return (
     <div>
-      <FocusInput />
-      <Timer />
+      <UniqueId />
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+        blanditiis at facere asperiores hic corrupti obcaecati aspernatur
+        impedit tempore! Ipsa suscipit ratione consequuntur id eius!
+      </p>
+      <UniqueId />
     </div>
   );
 }
