@@ -7,7 +7,7 @@ const Meals = () => {
 
   useEffect(() => {
     // Fetch meals category country list
-    async function fetchMealsCategory() {
+    const fetchMealsCategory = async () => {
       try {
         let res = await axios.get(
           "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
@@ -16,7 +16,7 @@ const Meals = () => {
       } catch (error) {
         console.log(`Error during fetch: ${error}`);
       }
-    }
+    };
     fetchMealsCategory();
   }, []);
 
@@ -84,7 +84,7 @@ const Meals = () => {
       case "Vietnamese":
         return "https://flagsapi.com/VN/flat/64.png";
       default:
-        return "https://flagsapi.com/US/flat/64.png"; // Default flag
+        return "https://flagsapi.com/MD/flat/64.png";
     }
   };
 
@@ -95,7 +95,6 @@ const Meals = () => {
         <ul className="list">
           {mealCategory.map(({ strArea }) => (
             <div key={strArea} className="meal-item">
-              {/* Use dynamic flag URL here */}
               <img src={getFlagUrl(strArea)} alt={`Flag of ${strArea}`} />
               <li>{strArea}</li>
             </div>
