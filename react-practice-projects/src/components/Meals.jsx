@@ -15,7 +15,7 @@ const Meals = () => {
 
         setMealCategory(res.data.meals);
       } catch (error) {
-        console.log(`Eror duing fetch: ${error}`);
+        console.log(`Error duing fetch: ${error}`);
       }
     }
 
