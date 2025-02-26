@@ -1,44 +1,41 @@
-//  "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
+// www.themealdb.com/api/json/v1/1/list.php?a=list  area list
+
 import axios from "axios";
 import { useEffect, useState } from "react";
+import "../style.css";
+
 const Meals = () => {
-  const [meals, setMeals] = useState([]);
-
-  const listStyles = {
-    color: "blue",
-    fontSize: "20px",
-    backgroundColor: "lightgray",
-    listStyle: "none",
-    padding: 0,
-    margin: 0,
-  };
-
+  const [mealCategory, setMealCategory] = useState([]);
   useEffect(() => {
-    async function fetchMeal() {
+    async function fetchMeals() {
       try {
-        let response = await axios.get(
-          "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
+        let res = await axios.get(
+          "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
         );
 
-        setMeals(response.data.meals);
+        setMealCategory(res.data.meals);
       } catch (error) {
-        console.log(`Fetch data erorr: ${error}`);
+        console.log(`Eror duing fetch: ${error}`);
       }
     }
-    fetchMeal();
+
+    fetchMeals();
   }, []);
+  console.log(mealCategory);
 
   return (
     <div>
-      <ul style={listStyles}>
-        {meals.map(({ idMeal, strMeal, strMealThumb }) => (
-          <li key={idMeal}>
-            <h1>Meal number: {idMeal}</h1>
-            <img src={strMealThumb} alt={strMeal} />
-            <h2>{strMeal}</h2>
-          </li>
-        ))}
-      </ul>
+      <section>
+        <h1>Please choose meal category:</h1>
+        <ul className="list">
+          {mealCategory.map(({ strArea }) => (
+            <div key={strArea} className="meal-item">
+              <img src="https://flagsapi.com/BE/flat/64.png" />
+              <li>{strArea}</li>
+            </div>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 };
