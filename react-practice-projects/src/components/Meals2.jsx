@@ -44,7 +44,11 @@ const Meals2 = ({ country, setDisplayMeals, setDisplayCountries }) => {
               {meals.map(({ idMeal, strMeal, strMealThumb }) => (
                 <li key={idMeal} className="food-card">
                   {strMeal}
-                  <img src={strMealThumb} alt={`Photo of ${strMeal}`} />
+                  <img
+                    src={strMealThumb}
+                    alt={`Photo of ${strMeal}`}
+                    loading="lazy"
+                  />
                 </li>
               ))}
             </ul>

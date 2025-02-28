@@ -49,7 +49,11 @@ const Meals = () => {
                   className="meal-item"
                   onClick={() => hideCards(strArea)}
                 >
-                  <img src={getFlagUrl(strArea)} alt={`Flag of ${strArea}`} />
+                  <img
+                    src={getFlagUrl(strArea)}
+                    alt={`Flag of ${strArea}`}
+                    loading="lazy"
+                  />
                   <li>{strArea}</li>
                 </div>
               ))}
