@@ -1,14 +1,9 @@
-import Accordeon from "./components/Accordeon";
-import { accordionData } from "./utils/content";
+import Form from "./components/Form";
 
 const App = () => {
   return (
     <div>
-      <div className="accordion">
-        {accordionData.map(({ title, content }) => (
-          <Accordeon title={title} content={content} key={title} />
-        ))}
-      </div>
+      <Form />
     </div>
   );
 };
