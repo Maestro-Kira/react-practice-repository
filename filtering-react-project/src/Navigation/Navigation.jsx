@@ -3,7 +3,10 @@ import { FaHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdPersonAdd } from "react-icons/io";
 import "./Navigation.css";
-const Navigation = () => {
+const Navigation = ({ query, setQuery }) => {
+  const handleSearchChange = (e) => {
+    setQuery(e.target.value);
+  };
   return (
     <>
       <nav className="nav-section">
@@ -13,6 +16,8 @@ const Navigation = () => {
           id="searchBar"
           placeholder="Enter your search shoes.."
           className="nav-search-bar"
+          value={query}
+          onChange={handleSearchChange}
         />
         <div className="nav-icons-section">
           <FaHeart className="nav-icons" />

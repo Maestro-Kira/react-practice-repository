@@ -7,19 +7,18 @@ import { useState } from "react";
 import products from "./db/data";
 
 function App() {
-  const [selectedCategory, setselectedCategory] = useState(null);
   const [query, setQuery] = useState("");
 
-  // const handleClick = (e) => {
-  //   setselectedCategory(e.target.value);
-  // };
+  const filteredProducts = products.filter((product) =>
+    product.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+  );
 
   return (
     <div>
       <Sidebar />
-      <Navigation />
+      <Navigation query={query} setQuery={setQuery} />
       <Recommended data={products} />
-      <Products data={products} />
+      <Products data={filteredProducts} />
     </div>
   );
 }
