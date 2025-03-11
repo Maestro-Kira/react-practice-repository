@@ -1,7 +1,6 @@
 import React from "react";
 import "./Recommended.css";
 import Buttons from "../components/Buttons";
-import { IoCameraOutline } from "react-icons/io5";
 
 const Recommended = ({ data }) => {
   // Extract and sort brands from data.js
