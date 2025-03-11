@@ -1,20 +1,21 @@
 .recommended-section {
-    margin-left: 20rem;
-    margin-bottom: 30px;
+  margin-left: 20rem;
+  margin-bottom: 20px;
 }
 
 .recommended-title {
-    margin-bottom: 20px;    
-    font-size: 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .recommended-btn {
-    padding: 10px;
-    margin-right: 8px;
-    width: 6rem;
-    background: transparent;
-    border: none;
-    border: 2px solid hwb(0 44% 56% / 0.242);
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  width: 6rem;
+  background: transparent;
+  border: none;
+  border: 2px solid hwb(0 44% 56% / 0.242);
+  border-radius: 5px;
+  cursor: pointer;
 }

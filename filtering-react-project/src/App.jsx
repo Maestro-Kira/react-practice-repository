@@ -3,13 +3,23 @@ import Navigation from "./Navigation/Navigation";
 import Recommended from "./Recommended/Recommended";
 import Products from "./Products/Products";
 import Sidebar from "./Sidebar/Sidebar";
+import { useState } from "react";
+import products from "./db/data";
+
 function App() {
+  const [selectedCategory, setselectedCategory] = useState(null);
+  const [query, setQuery] = useState("");
+
+  // const handleClick = (e) => {
+  //   setselectedCategory(e.target.value);
+  // };
+
   return (
     <div>
       <Sidebar />
       <Navigation />
-      <Recommended />
-      <Products />
+      <Recommended data={products} />
+      <Products data={products} />
     </div>
   );
 }
