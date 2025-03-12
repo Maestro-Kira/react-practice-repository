@@ -32,7 +32,7 @@ const data = [
   },
   {
     img: "https://m.media-amazon.com/images/I/71oEKkghg-L._AC_UX575_.jpg",
-    title: "Nike Running Shoe",
+    title: "Adidas Running Shoe",
     reviews: "(321 reviews)",
     prevPrice: "$135.00",
     newPrice: "190",
@@ -52,7 +52,7 @@ const data = [
   },
   {
     img: "https://m.media-amazon.com/images/I/71zKuNICJAL._AC_UX625_.jpg",
-    title: "Knit Ballet Flat",
+    title: "Knit Ballet Flat Adidas",
     reviews: "(78 reviews)",
     prevPrice: "$100.00",
     newPrice: "50",
@@ -82,7 +82,7 @@ const data = [
   },
   {
     img: "https://m.media-amazon.com/images/I/61-cBsLhJHL._AC_UY695_.jpg",
-    title: "Nike Men's Sneaker",
+    title: "Adidas Men's Sneaker",
     reviews: "(532 reviews)",
     prevPrice: "$140.00",
     newPrice: "205",

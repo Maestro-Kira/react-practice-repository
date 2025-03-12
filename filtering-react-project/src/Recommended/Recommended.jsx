@@ -2,7 +2,7 @@ import React from "react";
 import "./Recommended.css";
 import Buttons from "../components/Buttons";
 
-const Recommended = ({ data }) => {
+const Recommended = ({ data, setClickedBrand }) => {
   // Extract and sort brands from data.js
   const brands = [
     ...new Set(
@@ -13,12 +13,12 @@ const Recommended = ({ data }) => {
     ),
   ].sort();
 
-  const displayBrands = ["All Products", ...brands];
+  const brandsBtnNames = ["All Products", ...brands];
 
   return (
     <section className="recommended-section">
       <h2 className="recommended-title">Recommended</h2>
-      <Buttons brands={displayBrands} />
+      <Buttons brands={brandsBtnNames} setClickedBrand={setClickedBrand} />
     </section>
   );
 };
