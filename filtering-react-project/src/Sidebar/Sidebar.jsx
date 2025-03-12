@@ -1,12 +1,13 @@
 import React from "react";
 import "./Sidebar.css";
 import Category from "./Category/Category";
-const Sidebar = (setSelectedCategory) => {
+const Sidebar = ({ setSelectedCategory }) => {
   return (
     <>
       <section className="sidebar-section">
         <span className="sidebar-cart">🛒</span>
         <Category setSelectedCategory={setSelectedCategory} />
+
         {/* PRICE */}
         <div className="sidebar-category-select">
           <h2 className="sidebar-title">Price</h2>

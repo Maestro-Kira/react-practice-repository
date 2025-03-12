@@ -2,7 +2,7 @@ import React from "react";
 import "../Sidebar.css";
 import Input from "../../components/Input";
 
-const Category = (setSelectedCategory) => {
+const Category = ({ setSelectedCategory }) => {
   return (
     <>
       <div className="sidebar-category-select">
@@ -11,7 +11,7 @@ const Category = (setSelectedCategory) => {
         <Input
           setSelectedCategory={setSelectedCategory}
           category="category"
-          value="All-Products"
+          value=""
           title="All"
         />
 
