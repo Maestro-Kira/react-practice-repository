@@ -8,16 +8,16 @@ import products from "./db/data";
 
 function App() {
   const [query, setQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [clickedBrand, setClickedBrand] = useState("All Products");
 
-  const filteredProducts = products.filter((product) =>
-    product.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+  const filteredProducts = products.filter(({ title }) =>
+    title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
   );
-  console.log(clickedBrand);
 
   return (
     <div>
-      <Sidebar />
+      <Sidebar setSelectedCategory={setSelectedCategory} />
       <Navigation query={query} setQuery={setQuery} />
       <Recommended data={products} setClickedBrand={setClickedBrand} />
       <Products data={filteredProducts} clickedBrand={clickedBrand} />
