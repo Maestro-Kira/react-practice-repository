@@ -1,35 +1,41 @@
 import React from "react";
 import "./Products.css";
 import Cards from "../components/Cards";
-/**
- *     
-    title: "Flat Slip On Pumps",
-    reviews: "(56 reviews)",
-    prevPrice: "$120.00",
-    newPrice: "75",
-    company: "Vans",
-    color: "green",
-    category: "flats",
- */
-const Products = ({ data, clickedBrand, selectedCategory }) => {
-  //Filter data based on what button is clicked or user choice in the sidebar
-  // const filteredData =
-  //   clickedBrand === "All Products"
-  //     ? data
-  //     : data.filter(({ company }) => company === clickedBrand);
 
-  let filteredData;
+const Products = ({ data, clickedBrand, selectedCategory, selectedPrice }) => {
+  let filteredData = data;
 
-  if (clickedBrand === "All Products" || selectedCategory === "") {
-    filteredData = data; // Include all products if "All Products" is selected
-  } else {
-    filteredData = data.filter(({ company }) => company === clickedBrand); // Filter by the selected brand
+  // Apply brand filter first
+  if (clickedBrand !== "All Products") {
+    filteredData = filteredData.filter(
+      ({ company }) => company === clickedBrand
+    );
   }
 
+  // Apply category filter next
   if (selectedCategory !== "") {
-    filteredData = data.filter(({ category }) => category === selectedCategory);
+    filteredData = filteredData.filter(
+      ({ category }) => category === selectedCategory
+    );
   }
 
+  if (selectedPrice !== "") {
+    filteredData = filteredData.filter(({ newPrice }) => {
+      const price = parseFloat(newPrice); // Ensure price is a number
+      switch (selectedPrice) {
+        case "50":
+          return price <= 50;
+        case "100":
+          return price > 50 && price <= 100;
+        case "150":
+          return price > 100 && price <= 150;
+        case "200":
+          return price > 150;
+        default:
+          return true; // "All" case
+      }
+    });
+  }
   return (
     <section className="product-container">
       <Cards itemParams={filteredData} />

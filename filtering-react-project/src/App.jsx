@@ -6,10 +6,16 @@ import { useState } from "react";
 import products from "./db/data";
 
 function App() {
+  //User typing in input query
   const [query, setQuery] = useState("");
+  // User clicking on sidebar queries
   const [selectedCategory, setSelectedCategory] = useState("");
-  console.log(selectedCategory);
 
+  const [selectedPrice, setSelectedPrice] = useState("");
+  console.log(selectedCategory);
+  console.log(selectedPrice);
+
+  // User clicking on buttons queries
   const [clickedBrand, setClickedBrand] = useState("All Products");
 
   console.log(clickedBrand);
@@ -20,13 +26,17 @@ function App() {
 
   return (
     <div>
-      <Sidebar setSelectedCategory={setSelectedCategory} />
+      <Sidebar
+        setSelectedCategory={setSelectedCategory}
+        setSelectedPrice={setSelectedPrice}
+      />
       <Navigation query={query} setQuery={setQuery} />
       <Recommended data={products} setClickedBrand={setClickedBrand} />
       <Products
         data={filteredProducts}
         clickedBrand={clickedBrand}
         selectedCategory={selectedCategory}
+        selectedPrice={selectedPrice}
       />
     </div>
   );

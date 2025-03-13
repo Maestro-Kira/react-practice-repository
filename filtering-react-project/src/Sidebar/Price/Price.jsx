@@ -2,16 +2,16 @@ import React from "react";
 import "../Sidebar.css";
 import Input from "../../components/Input";
 
-const Category = ({ setSelectedCategory, setSelectedPrice }) => {
+const Price = ({ setSelectedCategory, setSelectedPrice }) => {
   return (
     <>
       <div className="sidebar-category-select">
-        <h2 className="sidebar-title">Category</h2>
+        <h2 className="sidebar-title">Price</h2>
 
         <Input
           setSelectedCategory={setSelectedCategory}
           setSelectedPrice={setSelectedPrice}
-          category="category"
+          category="price"
           value=""
           title="All"
         />
@@ -19,37 +19,37 @@ const Category = ({ setSelectedCategory, setSelectedPrice }) => {
         <Input
           setSelectedCategory={setSelectedCategory}
           setSelectedPrice={setSelectedPrice}
-          category="category"
-          value="sneakers"
-          title="Sneakers"
+          category="price"
+          value="50"
+          title="$0-50"
         />
 
         <Input
           setSelectedCategory={setSelectedCategory}
           setSelectedPrice={setSelectedPrice}
-          category="category"
-          value="flats"
-          title="Flats"
+          category="price"
+          value="100"
+          title="$50-100"
         />
 
         <Input
           setSelectedCategory={setSelectedCategory}
           setSelectedPrice={setSelectedPrice}
-          category="category"
-          value="sandals"
-          title="Sandals"
+          category="price"
+          value="150"
+          title="$100-$150"
         />
 
         <Input
           setSelectedCategory={setSelectedCategory}
           setSelectedPrice={setSelectedPrice}
-          category="category"
-          value="heels"
-          title="Heels"
+          category="price"
+          value="200"
+          title="Over $150"
         />
       </div>
     </>
   );
 };
 
-export default Category;
+export default Price;

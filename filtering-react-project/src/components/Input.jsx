@@ -1,9 +1,19 @@
 import React from "react";
 import "../Sidebar/Sidebar.css";
 
-const Input = ({ setSelectedCategory, category, value, title }) => {
+const Input = ({
+  setSelectedCategory,
+  setSelectedPrice,
+  category,
+  value,
+  title,
+}) => {
   const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
+    if (category === "price") {
+      setSelectedPrice(event.target.value);
+    } else {
+      setSelectedCategory(event.target.value);
+    }
   };
 
   return (
