@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 const Buttons = ({ brands, setClickedBrand }) => {
+  const [selectedOption, setSelectedOption] = useState("All Products");
   const handleClick = (brand) => {
+    setSelectedOption(brand);
     setClickedBrand(brand);
   };
 
@@ -10,7 +12,9 @@ const Buttons = ({ brands, setClickedBrand }) => {
     <div>
       {brands.map((item) => (
         <button
-          className="recommended-btn"
+          className={`recommended-btn ${
+            selectedOption === item ? "active" : ""
+          }`}
           key={uuidv4()}
           onClick={() => handleClick(item)}
         >

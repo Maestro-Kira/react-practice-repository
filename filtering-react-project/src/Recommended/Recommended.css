@@ -19,3 +19,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.recommended-btn.active {
+  border: 2px solid lightgreen;
+}

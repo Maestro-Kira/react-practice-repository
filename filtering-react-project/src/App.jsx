@@ -12,8 +12,10 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const [selectedPrice, setSelectedPrice] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
   console.log(selectedCategory);
   console.log(selectedPrice);
+  console.log(selectedColor);
 
   // User clicking on buttons queries
   const [clickedBrand, setClickedBrand] = useState("All Products");
@@ -29,6 +31,7 @@ function App() {
       <Sidebar
         setSelectedCategory={setSelectedCategory}
         setSelectedPrice={setSelectedPrice}
+        setSelectedColor={setSelectedColor}
       />
       <Navigation query={query} setQuery={setQuery} />
       <Recommended data={products} setClickedBrand={setClickedBrand} />
@@ -37,6 +40,7 @@ function App() {
         clickedBrand={clickedBrand}
         selectedCategory={selectedCategory}
         selectedPrice={selectedPrice}
+        selectedColor={selectedColor}
       />
     </div>
   );
