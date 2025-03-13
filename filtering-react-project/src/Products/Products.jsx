@@ -2,7 +2,13 @@ import React from "react";
 import "./Products.css";
 import Cards from "../components/Cards";
 
-const Products = ({ data, clickedBrand, selectedCategory, selectedPrice }) => {
+const Products = ({
+  data,
+  clickedBrand,
+  selectedCategory,
+  selectedPrice,
+  selectedColor,
+}) => {
   let filteredData = data;
 
   // Apply brand filter first
@@ -19,9 +25,16 @@ const Products = ({ data, clickedBrand, selectedCategory, selectedPrice }) => {
     );
   }
 
+  // Apply color filter next
+
+  if (selectedColor !== "") {
+    filteredData = filteredData.filter(({ color }) => color === selectedColor);
+  }
+  // Apply price filter next
+
   if (selectedPrice !== "") {
     filteredData = filteredData.filter(({ newPrice }) => {
-      const price = parseFloat(newPrice); // Ensure price is a number
+      const price = parseFloat(newPrice);
       switch (selectedPrice) {
         case "50":
           return price <= 50;
@@ -32,10 +45,11 @@ const Products = ({ data, clickedBrand, selectedCategory, selectedPrice }) => {
         case "200":
           return price > 150;
         default:
-          return true; // "All" case
+          return true;
       }
     });
   }
+  //Render cards after filtering
   return (
     <section className="product-container">
       {filteredData.length > 0 ? (

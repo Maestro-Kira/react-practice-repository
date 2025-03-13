@@ -4,6 +4,7 @@ import "../Sidebar/Sidebar.css";
 const Input = ({
   setSelectedCategory,
   setSelectedPrice,
+  setSelectedColor,
   category,
   value,
   title,
@@ -11,8 +12,10 @@ const Input = ({
   const handleCategoryChange = (event) => {
     if (category === "price") {
       setSelectedPrice(event.target.value);
-    } else {
+    } else if (category === "category") {
       setSelectedCategory(event.target.value);
+    } else {
+      setSelectedColor(event.target.value);
     }
   };
 

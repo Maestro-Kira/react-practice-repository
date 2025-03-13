@@ -2,7 +2,12 @@ import React from "react";
 import "./Sidebar.css";
 import Category from "./Category/Category";
 import Price from "./Price/Price";
-const Sidebar = ({ setSelectedCategory, setSelectedPrice }) => {
+import Color from "./Color/Color";
+const Sidebar = ({
+  setSelectedCategory,
+  setSelectedPrice,
+  setSelectedColor,
+}) => {
   return (
     <>
       <section className="sidebar-section">
@@ -11,35 +16,20 @@ const Sidebar = ({ setSelectedCategory, setSelectedPrice }) => {
         <Category
           setSelectedCategory={setSelectedCategory}
           setSelectedPrice={setSelectedPrice}
+          setSelectedColor={setSelectedColor}
         />
 
         <Price
           setSelectedCategory={setSelectedCategory}
           setSelectedPrice={setSelectedPrice}
+          setSelectedColor={setSelectedColor}
         />
 
-        {/* COLOR */}
-        <div className="sidebar-category-select">
-          <h2 className="sidebar-title">Color</h2>
-          <label>
-            <input type="radio" name="color" value="" /> All
-          </label>
-          <label>
-            <input type="radio" name="color" value="black" /> Black
-          </label>
-          <label>
-            <input type="radio" name="color" value="blue" /> Blue
-          </label>
-          <label>
-            <input type="radio" name="color" value="red" /> Red
-          </label>
-          <label>
-            <input type="radio" name="color" value="green" /> Green
-          </label>
-          <label>
-            <input type="radio" name="color" value="white" /> White
-          </label>
-        </div>
+        <Color
+          setSelectedCategory={setSelectedCategory}
+          setSelectedPrice={setSelectedPrice}
+          setSelectedColor={setSelectedColor}
+        />
       </section>
     </>
   );
