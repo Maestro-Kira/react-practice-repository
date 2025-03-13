@@ -38,7 +38,14 @@ const Products = ({ data, clickedBrand, selectedCategory, selectedPrice }) => {
   }
   return (
     <section className="product-container">
-      <Cards itemParams={filteredData} />
+      {filteredData.length > 0 ? (
+        <Cards itemParams={filteredData} />
+      ) : (
+        <h2>
+          No products were found with the given parameters. Try adjusting your
+          search filters.
+        </h2>
+      )}
     </section>
   );
 };
