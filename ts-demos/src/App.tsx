@@ -1,9 +1,16 @@
-import User from "./components/User";
+import Button from "./Button";
 
 const App = () => {
+  const onClick = () => {
+    alert("Youclicked ME!");
+  };
   return (
     <div>
-      <User name="kira" age={20} isStudent={true} status={true} />
+      <Button label="CLick me please" onClick={onClick} disabled={false} />
+      <br />
+      <br />
+      <br />
+      <Button label="CLick me please" onClick={onClick} disabled={true} />
     </div>
   );
 };
