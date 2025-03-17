@@ -1,30 +1,25 @@
-import AdminInfo from "./AdminInfo";
-import UserInfo from "./UserInfo";
+import AdminInfo from "./components/AdminInfo";
+import UserInfo from "./components/UserInfo";
+import { Info, AdminInfoList } from "./types";
 
 const App = () => {
+  const user: Info = {
+    id: 1,
+    name: "Johny",
+    email: "johny@gmail.com",
+  };
+
+  const admin: AdminInfoList = {
+    id: 2,
+    name: "Jenny",
+    email: "jane@gmail.com",
+    role: "admin",
+    lastLogin: new Date(),
+  };
   return (
     <div>
-      <UserInfo
-        id={1}
-        name="Kira"
-        surname="Vlasenko"
-        age={29}
-        email="kira@vlas.gmail.com"
-        online={true}
-      />
-
-      <br />
-      <br />
-
-      <AdminInfo
-        id={2}
-        name="Ivet"
-        surname="Vlasenko"
-        age={22}
-        email="ivi@vlas.gmail.com"
-        online={false}
-        rank="BOSS"
-      />
+      <UserInfo user={user} />
+      <AdminInfo admin={admin} />
     </div>
   );
 };

@@ -1,12 +1,12 @@
-export type Info = {
+type Info = {
   id: number;
   name: string;
-  surname: string;
-  age: number;
   email: string;
-  online: boolean;
 };
 
-export type AdminInfoList = Info & {
-  rank: string;
+type AdminInfoList = Info & {
+  role: string;
+  lastLogin: Date;
 };
+
+export { type Info, type AdminInfoList };
