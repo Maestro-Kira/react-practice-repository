@@ -1,18 +1,18 @@
-import React from "react";
-import { Info } from "../types";
-
-type UserInfoProp = {
-  user: Info;
+export type Info = {
+  username: string;
+  email: string;
+  age: number;
+  location: string[];
 };
 
-const UserInfo: React.FC<UserInfoProp> = ({ user }) => {
+const UserInfo = ({ username, email, age, location }: Info) => {
   return (
-    <div>
-      <h2>User info:</h2>
-      <p>{user.id}</p>
-      <p>{user.name}</p>
-      <p>{user.email}</p>
-    </div>
+    <ul>
+      <li>{username}</li>
+      <li>{email}</li>
+      <li>{age}</li>
+      <li>{JSON.stringify(location)}</li>
+    </ul>
   );
 };
 
