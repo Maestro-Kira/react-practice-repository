@@ -1,9 +1,11 @@
-import Counter from "./components/Counter";
+import TodoList from "./TodoList";
+import UserProfile from "./UserProfile";
 
 const App = () => {
   return (
     <div>
-      <Counter />
+      <UserProfile />
+      <TodoList />
     </div>
   );
 };
