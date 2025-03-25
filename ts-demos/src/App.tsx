@@ -1,3 +1,4 @@
+import EventHandling from "./components/EventHandling";
 import ContactForm from "./ContactForm";
 import FocusInput from "./FocusInput";
 
@@ -6,6 +7,7 @@ const App = () => {
     <div>
       <FocusInput />
       <ContactForm />
+      <EventHandling />
     </div>
   );
 };
