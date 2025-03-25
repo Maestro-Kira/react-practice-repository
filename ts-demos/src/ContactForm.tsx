@@ -1,53 +1,60 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 
-interface ContactFormState {
+interface formData {
   name: string;
   email: string;
 }
+
 const ContactForm = () => {
-  const [formData, setFormData] = useState<ContactFormState>({
+  const [userInfo, setUserInfo] = useState<formData>({
     name: "",
     email: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+
+    setUserInfo((prevInfo) => ({
+      ...prevInfo,
       [name]: value,
     }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form Submitted!", formData);
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log("Form Submitted", userInfo);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-        </label>
-
-        <label>
-          Email:
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </label>
-      </div>
-
+      <label>
+        Name:
+        <input
+          type="text"
+          name="name"
+          placeholder="Type your name.."
+          value={userInfo.name}
+          onChange={handleChange}
+        />
+      </label>
+      <br />
+      <label>
+        Email:
+        <input
+          type="email"
+          name="email"
+          placeholder="Type your email.."
+          value={userInfo.email}
+          onChange={handleChange}
+        />
+      </label>
+      <br />
       <button type="submit">Submit</button>
+
+      <h1>User info</h1>
+      <h2>name: {userInfo.name}</h2>
+      <h2>email: {userInfo.email}</h2>
     </form>
   );
 };
