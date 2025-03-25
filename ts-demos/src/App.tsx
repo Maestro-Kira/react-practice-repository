@@ -1,13 +1,9 @@
-import EventHandling from "./components/EventHandling";
-import ContactForm from "./ContactForm";
-import FocusInput from "./FocusInput";
+import Counter from "./components/Counter";
 
 const App = () => {
   return (
     <div>
-      <FocusInput />
-      <ContactForm />
-      <EventHandling />
+      <Counter />
     </div>
   );
 };
