@@ -1,23 +1,59 @@
 import { useReducer } from "react";
-import { counterReducer, CounterState } from "../reducers/counterReducer";
 
-const initialState: CounterState = { count: 0 };
+type State = {
+  counter: number;
+};
+
+type Increment = {
+  type: "increment";
+};
+
+type Decrement = {
+  type: "decrement";
+};
+
+type Reset = {
+  type: "reset";
+};
+
+type Action = Increment | Decrement | Reset;
+
+const initialState = { counter: 0 };
+const reducer = (state: State, action: Action) => {
+  switch (action.type) {
+    case "increment":
+      return { counter: state.counter + 1 };
+    case "decrement":
+      return { counter: state.counter - 1 };
+    case "reset":
+      return { counter: 0 };
+
+    default:
+      return state;
+  }
+};
 
 const Counter = () => {
-  const [state, dispatch] = useReducer(counterReducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const increment = () => {
-    dispatch({ type: "INCREMENT" });
+    dispatch({ type: "increment" });
   };
 
   const decrement = () => {
-    dispatch({ type: "DECREMENT" });
+    dispatch({ type: "decrement" });
   };
+
+  const reset = () => {
+    dispatch({ type: "reset" });
+  };
+
   return (
     <div>
-      <h2>Count: {state.count}</h2>
+      <p>Counter: {state.counter} </p>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 };
