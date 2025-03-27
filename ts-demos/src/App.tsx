@@ -1,17 +1,15 @@
 import { useContext } from "react";
-import ThemeToggle from "./components/ThemeToggle";
-import "./styles.css";
+import Button from "./components/Button";
+import "./index.css";
 import { ThemeContext } from "./context/ThemeContext";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
-
   return (
     <div
-      className={`main-div ${theme === "dark" ? "dark-mode" : "light-mode"}`}
+      className={`main-page ${theme === "light" ? "light-mode" : "dark-mode"}`}
     >
-      <h1>Hello world!</h1>
-      <ThemeToggle />
+      <Button />
     </div>
   );
 };
