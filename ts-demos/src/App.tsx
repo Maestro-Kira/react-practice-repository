@@ -1,9 +1,10 @@
-import MyComponent from "./components/MyComponent";
+import UserList from "./components/UserList";
+import "./styles.css";
 
 const App = () => {
   return (
     <div>
-      <MyComponent />
+      <UserList />
     </div>
   );
 };
