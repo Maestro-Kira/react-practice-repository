@@ -1,5 +1,3 @@
-// https:jsonplaceholder.typecode.com/users
-
 import { useEffect, useState } from "react";
 
 interface UserData {
@@ -11,7 +9,7 @@ interface UserData {
 }
 
 const UserList = () => {
-  const [userInfo, setUserInfo] = useState<UserData[] | null>(null);
+  const [userInfo, setUserInfo] = useState<UserData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
