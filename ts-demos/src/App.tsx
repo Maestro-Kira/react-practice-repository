@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import MyComponent from "./components/MyComponent";
 
 const App = () => {
