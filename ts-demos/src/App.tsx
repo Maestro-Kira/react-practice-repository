@@ -1,10 +1,9 @@
-import UserList from "./components/UserList";
-import "./styles.css";
+import Form from "./components/Form";
 
 const App = () => {
   return (
     <div>
-      <UserList />
+      <Form />
     </div>
   );
 };
