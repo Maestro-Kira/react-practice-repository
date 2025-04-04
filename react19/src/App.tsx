@@ -1,9 +1,11 @@
+import BouncingLoader from "./components/BouncingLoader";
 import PulsingButton from "./components/PulsingButton";
 
 const App = () => {
   return (
     <div className="main">
-      <PulsingButton />
+      {/* <PulsingButton /> */}
+      <BouncingLoader />
     </div>
   );
 };
