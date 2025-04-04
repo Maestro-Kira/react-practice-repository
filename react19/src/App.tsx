@@ -1,14 +1,9 @@
-import { motion } from "motion/react";
+import PulsingButton from "./components/PulsingButton";
 
 const App = () => {
   return (
     <div className="main">
-      <motion.div
-        className="circle"
-        initial={{ x: -400 }}
-        animate={{ x: 200 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
-      />
+      <PulsingButton />
     </div>
   );
 };
