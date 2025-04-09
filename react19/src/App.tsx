@@ -1,9 +1,9 @@
-import AnimatedCard from "./components/AnimatedCard";
+import AnimatedImageGallery from "./components/AnimatedImageGallery";
 
 const App = () => {
   return (
-    <div className="main">
-      <AnimatedCard />
+    <div className="flex justify-center items-center">
+      <AnimatedImageGallery />
     </div>
   );
 };
