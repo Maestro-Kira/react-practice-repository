@@ -4,17 +4,19 @@
   box-sizing: border-box;
 }
 
-/* .main {
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  gap: 20px;
 }
 
 .circle {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   background-color: green;
   border-radius: 100%;
-} */
+}
