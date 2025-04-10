@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -19,4 +19,4 @@
   width: 100px;
   background-color: green;
   border-radius: 100%;
-}
+} */
