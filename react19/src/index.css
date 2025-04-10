@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-/* * {
+* {
   box-sizing: border-box;
 }
 
-.main {
+/* .main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,11 +12,11 @@
   height: 100vh;
   overflow: hidden;
   gap: 20px;
-}
+} */
 
 .circle {
   height: 100px;
   width: 100px;
   background-color: green;
   border-radius: 100%;
-} */
+}
