@@ -1,6 +1,8 @@
 // import Box from "./components/Box";
 
-import SpinningIcon from "./components/SpinningIcon";
+import Rectangle from "./components/Rectangle";
+
+// import SpinningIcon from "./components/SpinningIcon";
 
 // import Circle from "./components/Circle";
 
@@ -9,7 +11,8 @@ const App = () => {
     <div>
       {/* <Box /> */}
       {/* <Circle /> */}
-      <SpinningIcon />
+      {/* <SpinningIcon /> */}
+      <Rectangle />
     </div>
   );
 };

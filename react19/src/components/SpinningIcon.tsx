@@ -8,7 +8,7 @@ const SpinningIcon = () => {
       <MotionSpinner
         size={70}
         animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 1.7, ease: "linear" }}
+        transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
       />
     </div>
   );
