@@ -1,6 +1,8 @@
 // import Box from "./components/Box";
 
-import Rectangle from "./components/Rectangle";
+import MovingFigures from "./components/MovingFigures";
+
+// import Rectangle from "./components/Rectangle";
 
 // import SpinningIcon from "./components/SpinningIcon";
 
@@ -12,7 +14,8 @@ const App = () => {
       {/* <Box /> */}
       {/* <Circle /> */}
       {/* <SpinningIcon /> */}
-      <Rectangle />
+      {/* <Rectangle /> */}
+      <MovingFigures />
     </div>
   );
 };
