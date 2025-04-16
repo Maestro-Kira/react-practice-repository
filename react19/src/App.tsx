@@ -1,9 +1,12 @@
-import FadeInOut from "./components/FadeInOut";
+// import FadeInOut from "./components/FadeInOut";
+
+// import SideBar from "./components/SideBar";
 
 const App = () => {
   return (
     <div>
-      <FadeInOut />
+      {/* <FadeInOut /> */}
+      {/* <SideBar /> */}
     </div>
   );
 };
