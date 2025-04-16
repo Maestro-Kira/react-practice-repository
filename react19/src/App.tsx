@@ -1,21 +1,9 @@
-// import Box from "./components/Box";
-
-import MovingFigures from "./components/MovingFigures";
-
-// import Rectangle from "./components/Rectangle";
-
-// import SpinningIcon from "./components/SpinningIcon";
-
-// import Circle from "./components/Circle";
+import FadeInOut from "./components/FadeInOut";
 
 const App = () => {
   return (
     <div>
-      {/* <Box /> */}
-      {/* <Circle /> */}
-      {/* <SpinningIcon /> */}
-      {/* <Rectangle /> */}
-      <MovingFigures />
+      <FadeInOut />
     </div>
   );
 };
