@@ -1,5 +1,7 @@
 // import FadeInOut from "./components/FadeInOut";
 
+import Modal from "./components/Modal";
+
 // import SideBar from "./components/SideBar";
 
 const App = () => {
@@ -7,6 +9,7 @@ const App = () => {
     <div>
       {/* <FadeInOut /> */}
       {/* <SideBar /> */}
+      <Modal />
     </div>
   );
 };
