@@ -1,6 +1,8 @@
 // import FadeInOut from "./components/FadeInOut";
 
-import Button from "./components/Button";
+import Accordeon from "./components/Accordeon";
+
+// import Button from "./components/Button";
 
 // import Modal from "./components/Modal";
 
@@ -12,7 +14,8 @@ const App = () => {
       {/* <FadeInOut /> */}
       {/* <SideBar /> */}
       {/* <Modal /> */}
-      <Button />
+      {/* <Button /> */}
+      <Accordeon />
     </div>
   );
 };
