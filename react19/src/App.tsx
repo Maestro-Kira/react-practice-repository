@@ -1,6 +1,8 @@
 // import BouncingBall from "./components/BouncingBall";
 
-import Square from "./components/Square";
+// import SlidingText from "./components/SlidingText";
+
+// import Square from "./components/Square";
 
 // import PulsatingButton from "./components/PulsatingButton";
 
@@ -9,7 +11,8 @@ const App = () => {
     <div>
       {/* <BouncingBall /> */}
       {/* <PulsatingButton /> */}
-      <Square />
+      {/* <Square /> */}
+      {/* <SlidingText /> */}
     </div>
   );
 };
