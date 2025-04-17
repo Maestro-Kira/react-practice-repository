@@ -1,9 +1,12 @@
-import BouncingBall from "./components/BouncingBall";
+// import BouncingBall from "./components/BouncingBall";
+
+import PulsatingButton from "./components/PulsatingButton";
 
 const App = () => {
   return (
     <div>
-      <BouncingBall />
+      {/* <BouncingBall /> */}
+      <PulsatingButton />
     </div>
   );
 };
