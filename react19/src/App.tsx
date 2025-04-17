@@ -1,6 +1,8 @@
 // import FadeInOut from "./components/FadeInOut";
 
-import Accordeon from "./components/Accordeon";
+import ToastNotification from "./components/ToastNotification";
+
+// import Accordeon from "./components/Accordeon";
 
 // import Button from "./components/Button";
 
@@ -15,7 +17,8 @@ const App = () => {
       {/* <SideBar /> */}
       {/* <Modal /> */}
       {/* <Button /> */}
-      <Accordeon />
+      {/* <Accordeon /> */}
+      <ToastNotification />
     </div>
   );
 };
