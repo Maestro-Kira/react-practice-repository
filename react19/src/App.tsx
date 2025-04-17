@@ -1,6 +1,8 @@
 // import BouncingBall from "./components/BouncingBall";
 
-import ZigZag from "./components/ZigZag";
+import WaveEffect from "./components/WaveEffect";
+
+// import ZigZag from "./components/ZigZag";
 
 // import SlidingText from "./components/SlidingText";
 
@@ -15,7 +17,9 @@ const App = () => {
       {/* <PulsatingButton /> */}
       {/* <Square /> */}
       {/* <SlidingText /> */}
-      <ZigZag />
+      {/* <ZigZag /> */}
+
+      <WaveEffect />
     </div>
   );
 };
