@@ -1,9 +1,9 @@
-import Toast from "./components/Toast";
+import BouncingBall from "./components/BouncingBall";
 
 const App = () => {
   return (
     <div>
-      <Toast />
+      <BouncingBall />
     </div>
   );
 };
