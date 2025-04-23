@@ -1,6 +1,8 @@
 // import FadeIn from "./components/FadeIn";
 
-import Tooltip from "./components/Tooltip";
+import ToggleSwitch from "./components/ToggleSwitch";
+
+// import Tooltip from "./components/Tooltip";
 
 // import SlidingMenu from "./components/SlidingMenu";
 
@@ -9,7 +11,8 @@ const App = () => {
     <div className="h-screen flex justify-center items-center bg-[#0d1017] text-white">
       {/* <FadeIn /> */}
       {/* <SlidingMenu /> */}
-      <Tooltip />
+      {/* <Tooltip /> */}
+      <ToggleSwitch />
     </div>
   );
 };
