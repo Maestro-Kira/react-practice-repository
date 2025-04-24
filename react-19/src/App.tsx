@@ -1,6 +1,8 @@
 // import SwipableCard from "./components/SwipableCard";
 
-import LongPressToChangeSize from "./components/LongPressToChangeSize";
+import GestureBasedImageGallery from "./components/GestureBasedImageGallery";
+
+// import LongPressToChangeSize from "./components/LongPressToChangeSize";
 
 // import TapOnChange from "./components/TapOnChange";
 
@@ -15,7 +17,8 @@ const App = () => {
       {/* <DraggableBox /> */}
       {/* <RotateOnDrag /> */}
       {/* <TapOnChange /> */}
-      <LongPressToChangeSize />
+      {/* <LongPressToChangeSize /> */}
+      <GestureBasedImageGallery />
     </div>
   );
 };
