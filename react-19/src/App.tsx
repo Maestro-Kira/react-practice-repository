@@ -1,6 +1,8 @@
 // import SwipableCard from "./components/SwipableCard";
 
-import TapOnChange from "./components/TapOnChange";
+import LongPressToChangeSize from "./components/LongPressToChangeSize";
+
+// import TapOnChange from "./components/TapOnChange";
 
 // import RotateOnDrag from "./components/RotateOnDrag";
 
@@ -12,7 +14,8 @@ const App = () => {
       {/* <SwipableCard /> */}
       {/* <DraggableBox /> */}
       {/* <RotateOnDrag /> */}
-      <TapOnChange />
+      {/* <TapOnChange /> */}
+      <LongPressToChangeSize />
     </div>
   );
 };
