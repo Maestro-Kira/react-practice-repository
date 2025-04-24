@@ -1,32 +1,32 @@
 import { motion } from "framer-motion";
-const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+
+const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6"];
+
 const staggerVariants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
 };
-const StaggeredList = () => {
+
+const StaggeredGridLayout = () => {
   return (
     <motion.div
       initial="hidden"
       animate="visible"
       variants={{
         visible: {
-          transition: {
-            staggerChildren: 1,
-          },
+          transition: { staggerChildren: 1 },
         },
       }}
+      className="grid grid-cols-3 gap-4"
     >
       {items.map((item, index) => (
         <motion.div
           variants={staggerVariants}
           key={index}
-          className="mb-2 p-5 bg-yellow-300"
-        >
-          {item}
-        </motion.div>
+          className="p-4 bg-gray-200 rounded text-black"
+        />
       ))}
     </motion.div>
   );
 };
-export default StaggeredList;
+export default StaggeredGridLayout;
