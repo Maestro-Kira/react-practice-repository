@@ -1,6 +1,8 @@
 // import SwipableCard from "./components/SwipableCard";
 
-import RotateOnDrag from "./components/RotateOnDrag";
+import TapOnChange from "./components/TapOnChange";
+
+// import RotateOnDrag from "./components/RotateOnDrag";
 
 // import DraggableBox from "./components/DraggableBox";
 
@@ -9,7 +11,8 @@ const App = () => {
     <div className="h-screen flex justify-center items-center bg-[#0d1017] text-white">
       {/* <SwipableCard /> */}
       {/* <DraggableBox /> */}
-      <RotateOnDrag />
+      {/* <RotateOnDrag /> */}
+      <TapOnChange />
     </div>
   );
 };
