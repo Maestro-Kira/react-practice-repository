@@ -1,24 +1,9 @@
-// import SwipableCard from "./components/SwipableCard";
-
-import GestureBasedImageGallery from "./components/GestureBasedImageGallery";
-
-// import LongPressToChangeSize from "./components/LongPressToChangeSize";
-
-// import TapOnChange from "./components/TapOnChange";
-
-// import RotateOnDrag from "./components/RotateOnDrag";
-
-// import DraggableBox from "./components/DraggableBox";
+import StaggeredList from "./components/StaggeredList";
 
 const App = () => {
   return (
-    <div className="h-screen flex justify-center items-center bg-[#0d1017] text-white">
-      {/* <SwipableCard /> */}
-      {/* <DraggableBox /> */}
-      {/* <RotateOnDrag /> */}
-      {/* <TapOnChange /> */}
-      {/* <LongPressToChangeSize /> */}
-      <GestureBasedImageGallery />
+    <div className="flex h-full justify-center items-center bg-black ">
+      <StaggeredList />
     </div>
   );
 };
