@@ -1,17 +1,12 @@
-import DragableBox from "./components/DragableBox";
-// import HoverLinkedScale from "./components/HoverLinkedScale";
-
-// import DinamicRotation from "./components/DinamicRotation";
-
-// import SpringAnimatedPosition from "./components/SpringAnimatedPosition";
+import OtherComponent from "./components/OtherComponent";
+import { useStore } from "./store";
 
 const App = () => {
+  const { count } = useStore();
   return (
-    <div className="flex h-screen justify-center items-center bg-[#0d1017] text-white">
-      <DragableBox />
-      {/* <HoverLinkedScale /> */}
-      {/* <SpringAnimatedPosition /> */}
-      {/* <DinamicRotation /> */}
+    <div>
+      <h1>Count: {count}</h1>
+      <OtherComponent />
     </div>
   );
 };
