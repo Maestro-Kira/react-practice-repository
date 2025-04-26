@@ -1,13 +1,6 @@
-import OtherComponent from "./components/OtherComponent";
-import { useStore } from "./store";
+import RecipeApp from "./components/RecipeApp";
 
 const App = () => {
-  const { count } = useStore();
-  return (
-    <div>
-      <h1>Count: {count}</h1>
-      <OtherComponent />
-    </div>
-  );
+  return <RecipeApp />;
 };
 export default App;
