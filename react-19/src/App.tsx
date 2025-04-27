@@ -1,6 +1,10 @@
-import RecipeApp from "./components/RecipeApp";
+import ExpenseTracker from "./components/ExpenseTracker";
 
 const App = () => {
-  return <RecipeApp />;
+  return (
+    <div>
+      <ExpenseTracker />
+    </div>
+  );
 };
 export default App;
