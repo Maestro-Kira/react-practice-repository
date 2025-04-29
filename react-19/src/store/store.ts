@@ -1,31 +1,21 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
 
-interface Expense {
-  id: number;
-  description: string;
-  amount: number;
+interface Meals {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
 }
 
-interface ExpenseStore {
-  expenses: Expense[];
-  addExpense: (expense: Expense) => void;
-  removeExpense: (id: number) => void;
+interface StoreState {
+  meals: Meals[];
+  searchQuery: string;
+  setMeals: (meals: Meals[]) => void;
+  setSearchQuery: (query: string) => void;
 }
 
-export const useStore = create<ExpenseStore>()(
-  persist(
-    (set) => ({
-      expenses: [],
-      addExpense: (expense) =>
-        set((state) => ({
-          expenses: [...state.expenses, expense],
-        })),
-      removeExpense: (id) =>
-        set((state) => ({
-          expenses: state.expenses.filter((expense) => expense.id !== id),
-        })),
-    }),
-    { name: "expense-storage" }
-  )
-);
+export const useStore = create<StoreState>((set) => ({
+  meals: [],
+  searchQuery: "",
+  setMeals: (meals: Meals[]) => set({ meals }),
+  setSearchQuery: (query: string) => set({ searchQuery: query }),
+}));
