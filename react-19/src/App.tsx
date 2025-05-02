@@ -1,10 +1,10 @@
-import Meal from "./components/Meal";
+import FormBuilder from "./components/FormBUilder";
 
 const App = () => {
   return (
-    <section className="">
-      <Meal />
-    </section>
+    <div>
+      <FormBuilder />
+    </div>
   );
 };
 export default App;

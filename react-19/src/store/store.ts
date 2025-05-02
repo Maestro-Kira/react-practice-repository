@@ -1,21 +1,38 @@
 import { create } from "zustand";
 
-interface Meals {
-  idMeal: string;
-  strMeal: string;
-  strMealThumb: string;
+interface FormFields {
+  label: string;
+  type: "text" | "number" | "password" | "textarea" | "date" | "file";
+  value: string;
 }
 
-interface StoreState {
-  meals: Meals[];
-  searchQuery: string;
-  setMeals: (meals: Meals[]) => void;
-  setSearchQuery: (query: string) => void;
+interface FormStoreState {
+  formFields: FormFields[];
+  addField: (field: FormFields) => void;
+  removeField: (index: number) => void;
+  updateField: (index: number, updatedField: FormFields) => void;
+  resetForm: () => void;
 }
 
-export const useStore = create<StoreState>((set) => ({
-  meals: [],
-  searchQuery: "",
-  setMeals: (meals: Meals[]) => set({ meals }),
-  setSearchQuery: (query: string) => set({ searchQuery: query }),
+export const useFormStore = create<FormStoreState>((set) => ({
+  formFields: [],
+
+  addField: (field) =>
+    set((state) => ({
+      formFields: [...state.formFields, field],
+    })),
+
+  removeField: (index) =>
+    set((state) => ({
+      formFields: state.formFields.filter((_, i) => i !== index),
+    })),
+
+  updateField: (index, updatedField) =>
+    set((state) => ({
+      formFields: state.formFields.map((field, i) =>
+        i === index ? updatedField : field
+      ),
+    })),
+
+  resetForm: () => set(() => ({ formFields: [] })),
 }));
