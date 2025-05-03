@@ -1,38 +1,35 @@
 import { create } from "zustand";
 
-interface FormFields {
-  label: string;
-  type: "text" | "number" | "password" | "textarea" | "date" | "file";
-  value: string;
+interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
 }
 
-interface FormStoreState {
-  formFields: FormFields[];
-  addField: (field: FormFields) => void;
-  removeField: (index: number) => void;
-  updateField: (index: number, updatedField: FormFields) => void;
-  resetForm: () => void;
+interface TodoStore {
+  todos: Todo[];
+  addTodo: (todo: Todo) => void;
+  removeTodo: (id: number) => void;
+  toggleTodo: (id: number) => void;
 }
 
-export const useFormStore = create<FormStoreState>((set) => ({
-  formFields: [],
+export const useStore = create<TodoStore>((set) => ({
+  todos: [],
 
-  addField: (field) =>
+  addTodo: (todo) =>
     set((state) => ({
-      formFields: [...state.formFields, field],
+      todos: [...state.todos, todo],
     })),
 
-  removeField: (index) =>
+  removeTodo: (id) =>
     set((state) => ({
-      formFields: state.formFields.filter((_, i) => i !== index),
+      todos: state.todos.filter((todo) => todo.id !== id),
     })),
 
-  updateField: (index, updatedField) =>
+  toggleTodo: (id) =>
     set((state) => ({
-      formFields: state.formFields.map((field, i) =>
-        i === index ? updatedField : field
+      todos: state.todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
       ),
     })),
-
-  resetForm: () => set(() => ({ formFields: [] })),
 }));

@@ -1,9 +1,9 @@
-import FormBuilder from "./components/FormBUilder";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   return (
     <div>
-      <FormBuilder />
+      <TodoList />
     </div>
   );
 };
