@@ -1,45 +1,11 @@
-import { useEffect, useState } from "react";
-
-type Product = {
-  id: number;
-  title: string;
-  description: string;
-};
+import Component2 from "./components/Component2";
 
 const App = () => {
-  const [serverData, setServerData] = useState<Product[]>([]);
-  const [loadingData, setLoadingData] = useState(false);
-
-  useEffect(() => {
-    async function FetchData() {
-      try {
-        setLoadingData(true);
-        const response = await fetch("https://dummyjson.com/products");
-        const data = await response.json();
-        const { products } = data;
-        setServerData(products);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoadingData(false);
-      }
-    }
-
-    FetchData();
-  }, []);
+  const products = ["Product1", "Product2", "Product3"];
 
   return (
-    <div>
-      {loadingData ? (
-        <p>Loading...</p>
-      ) : (
-        serverData.map((product) => (
-          <div className="mb-4" key={product.id}>
-            <h2 className="text-2xl font-black">{product.title}</h2>
-            <p className="font-light">{product.description}</p>
-          </div>
-        ))
-      )}
+    <div className="min-h-screen flex justify-center items-center">
+      <Component2 productList={products} />
     </div>
   );
 };
