@@ -1,64 +1,94 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import titleVariants, {
-  buttonContainerVariants,
-  buttonVariants,
-} from "./varients/arients";
+import { useEffect, useState } from "react";
+import classes from "./styles.module.css";
+import TodoItem from "./components/todo-item";
+import TodoDetails from "./components/todo-details";
+import { Skeleton } from "@mui/material";
+
+export interface Todo {
+  id: number;
+  todo: string;
+  completed: boolean;
+  userId: number;
+}
 
 const App = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [toDoList, setToDoList] = useState<Todo[]>([]);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [todoDetails, setToDoDetails] = useState<Todo | null>(null);
+  const [openDialogue, setOpenDialogue] = useState(false);
+
+  async function fetchData() {
+    try {
+      setLoading(true);
+      const apiResponse = await fetch("https://dummyjson.com/todos");
+      const data = await apiResponse.json();
+      if (data?.todos && data?.todos?.length > 0) {
+        setToDoList(data.todos);
+      } else {
+        setToDoList([]);
+        setErrorMessage("");
+      }
+    } catch (error) {
+      setLoading(true);
+      console.log(error);
+      setErrorMessage("Some Error Happened");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function fetchDetailsOfCurrent(getCurrentTodoId: number) {
+    console.log(getCurrentTodoId);
+    try {
+      const apiResponse = await fetch(
+        `https://dummyjson.com/todos/${getCurrentTodoId}`
+      );
+      const details = await apiResponse.json();
+      if (details) {
+        setToDoDetails(details);
+        setOpenDialogue(true);
+      } else {
+        setToDoDetails(null);
+        setOpenDialogue(false);
+      }
+      console.log(details);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading)
+    return <Skeleton variant="rectangular" width={650} height={650} />;
 
   return (
-    <div className="main__container">
-      <div className="title__container">
-        <AnimatePresence>
-          {isVisible && (
-            <motion.h1
-              variants={titleVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              className="title absolute"
-            >
-              Target text
-            </motion.h1>
-          )}
-        </AnimatePresence>
-      </div>
-      <motion.div
-        variants={buttonContainerVariants}
-        initial="initial"
-        animate="animate"
-        className="flex flex-col space-y-2 btn-div"
-      >
-        <motion.button
-          variants={buttonVariants}
-          onClick={() => setIsVisible(!isVisible)}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.98 }}
-          className="btn"
-        >
-          {isVisible ? "Hide Item" : "Show Item"}
-        </motion.button>
-        <motion.button
-          variants={buttonVariants}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.98 }}
-          className="btn"
-        >
-          Toggle text
-        </motion.button>
+    <div className={classes.mainWrapper}>
+      <h1 className={classes.headerTitle}>Hello there</h1>
 
-        <motion.button
-          variants={buttonVariants}
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.98 }}
-          className="btn"
-        >
-          Change Theme
-        </motion.button>
-      </motion.div>
+      <div className={classes.todoListWrapper}>
+        {toDoList.length > 0
+          ? toDoList.map((todoItem) => (
+              <TodoItem
+                fetchDetailsOfCurrent={fetchDetailsOfCurrent}
+                todo={todoItem}
+                key={todoItem.id}
+              />
+            ))
+          : null}
+      </div>
+
+      <TodoDetails
+        setOpenDialogue={setOpenDialogue}
+        todoDetails={todoDetails}
+        openDialogue={openDialogue}
+        setToDoDetails={setToDoDetails}
+      />
     </div>
   );
 };
+
 export default App;
