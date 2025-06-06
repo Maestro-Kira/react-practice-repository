@@ -1,12 +1,12 @@
-import WithoutTanstackQuery from "./components/WithoutTanstackQuery";
+// import StaleTime from "./components/StaleTime";
 
-// import WithTanstackQuery from "./components/WithTanstackQuery";
+import RefetchInterval from "./components/RefetchInterval";
 
 const App = () => {
   return (
-    <div className="text-2xl text-green-800 font-extrabold">
-      <WithoutTanstackQuery />
-      {/* <WithTanstackQuery /> */}
+    <div>
+      {/* <StaleTime /> */}
+      <RefetchInterval />
     </div>
   );
 };
